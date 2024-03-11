@@ -1,38 +1,2804 @@
 .App {
+  overflow: hidden;
+}
+
+/* Loading sequence */
+.loading{
   text-align: center;
+  height: 53.5vh;
+  background-color: #EBEBEB;
+  margin: 0;
+  padding: 2em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.reservation-message{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 50vh;
+  background-color: #EBEBEB;
+  margin: 0;
+  padding: 2em;
+}
+
+.reservation-message-service{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 54.8vh;
+  background-color: #EBEBEB;
+  margin: 0;
+  padding: 2em;
+}
+/* Navbar */
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+
+.logo{
+  width: 3em;
+  height: auto;
+  margin-left: 4em;
+}
+
+
+nav {
+  margin: 0px;
+  background-color: #074220;
+  display: flex;
+  height: 3.2em;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+}
+
+ nav a{
+  text-decoration: none;
+  color: white;
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+nav li:hover{
+  color: #f8bddf;
+}
+
+nav .navbarAuth{
+  color: white;
+  position: absolute;
+  float: right;
+  right: 0;
+  padding-right: 2em;
+  cursor: pointer;
+  height: 1.2em;
+}
+nav .navbarAuth a{
+  margin: 0em 1.5em ;
+}
+nav .navbarAuth a:hover{
+  color: #f8bddf;
+}
+
+
+nav .btn-logout {
+  color: white;
+  position: absolute;
+  float: right;
+  right: 0;
+  padding-right: 2em;
+  cursor: pointer;
+}
+
+.burger-bar,
+.navbar-burger{
+  display: none;
+}
+
+
+
+
+
+/*HomePage css*/
+.coverHomepage{
+  background-color: black;
+  height: 94vh;
+}
+
+.coverHomepage img{
+  width: 100%;
+  height: 94vh;
+  position: relative;
+
+  margin: 0em;
+  opacity: 0.8;
+}
+
+.coverHomepage .logo-home{
+  position: absolute;
+  width: 30%;
+  height: auto;
+  top: 30%;
+  left: 37%;
+  opacity: 1;
+  display: none;
+}
+.coverHomepage h1 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.article-home{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 90%;
+  height: 40em;
+  background-color: #EBEBEB;
+  padding: 5em;
 }
 
-@keyframes App-logo-spin {
+.carousselHome{
+  background-color: #074220;
+  width: 40%;
+  height: 45em;
+  color: white;
+}
+
+.carousselHome img{
+  width: 100%;
+}
+
+.carousselHome h1, .carousselHome p, .carousselHome h3{
+  margin: 1em 2em;
+  text-decoration: none;
+}
+
+.carousselHome h1{
+  font-size: 1.5em;
+}
+
+.carousselHome p{
+  font-size: 1.2em;
+}
+
+.carousselHome h3{
+  color: white;
+  font-size: 1.2em;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.carousselHome h3:hover{
+  color: #f8bddf;
+  text-decoration: underline;
+}
+
+
+nav div ul a .logo {
+  animation: transitionOne 0.75s;
+  transition: 0.2s ease-out;
+}
+
+.logo-home.animate {
+  animation: transitionOne 0.75s;
+  transition: .1s ease-in-out;
+  display: initial;
+}
+
+.carousselHome img.animate {
+  animation: transitionTwo 0.75s;
+  transition: .1s ease-in-out;
+}
+
+div.carousselHome div h1.animate {
+  animation: transitionThree 0.75s;
+  transition: .2s ease-in-out;
+}
+
+div.carousselHome div p.animate {
+  animation: transitionFour 0.75s;
+  transition: .2s ease-in-out;
+}
+
+div.carousselHome div a h3.animate {
+  animation: transitionFive 0.75s;
+  transition: .2s ease-in-out;
+}
+
+
+@keyframes transitionOne {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateX(-500px);
   }
+
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes transitionTwo {
+  from {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes transitionThree {
+  from {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes transitionFour {
+  from {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes transitionFive {
+  from {
+    opacity: 0;
+    transform: translateY(500px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profile Page */
+
+.profile {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  height: 63.8vh;
+  background-color: #EBEBEB;
+}
+
+
+/*Service details Page */
+
+.service-details {
+  display: flex;
+  flex-direction: row;
+  background-color: #EBEBEB;
+  overflow: hidden;
+}
+
+.details-div {
+  margin: 1.5em 1.5em 0em 1.5em;
+  width: 50vw;
+}
+.details-div h2{
+  margin: 0em;
+}
+
+
+.details-div h4{
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.image-details{
+  width: 50vw;
+  height: 71.4vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.all-review h4{
+  text-align: center;
+  margin: 0.5em;
+  width: 35em;
+}
+
+.all-review{
+  overflow-y: scroll;
+  height: 10em;
+}
+
+.review-details{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #EBEBEB;
+}
+
+.btn-details{
+  display: flex;
+}
+.btn-details a{
+  padding: 0;
+}
+.btn-details button{
+  margin-right: 0.5em;
+  padding: 0.5em;
+  transition: 0.2s;
+}
+
+.btn-details button:hover{
+  border: #f8bddf 2px solid;
+}
+
+.card-review{
+  display: flex;
+  flex-direction: column;
+  margin: 2em;
+  background-color: #EBEBEB;
+  width: 90%;
+}
+
+.star-render{
+  padding: 0.5em 1em 0em;
+  margin: 0em;
+}
+
+.card-review p{
+  padding: 0.3em 1em 0em;
+  margin: 0em;
+}
+
+.picture-name-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.review-picture {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
+
+.deleteIcon, .editIcon{
+  width: 1em;
+  height: 1em;
+  margin: 0.5em;
+  float: right;
+  cursor: pointer;
+}
+
+.edit-review-div{
+  background-color: #EBEBEB;
+}
+.edit-review{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: auto;
+  padding: 13.2em 0em;
+}
+
+.edit-review input{
+  margin: 1em;
+}
+
+.gold-star {
+  color: gold;
+}
+.add-review-div{
+text-align: center;
+}
+
+
+
+
+
+/* Signup / Login */
+.SignupPage-Container, .LoginPage-Container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 2em;
+  background-color: #EBEBEB;
+}
+
+.signup-login {
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.SignupPage-Form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1em;
+  height: auto;
+
+}
+
+.LoginPage-Form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  height: 37.6vh;
+}
+
+.SignupPage-Form input, .LoginPage-Form input{
+  margin: 0.5em;
+  padding: 0.4em;
+}
+
+.SignupPage-Form button, .LoginPage-Form button{
+  border-radius: 2em;
+  border: 0.5px solid black;
+  padding:  0.75em 1em;
+  transition: 0.5s;
+  margin: 0.5em;
+}
+
+.SignupPage-Form button:hover, .LoginPage-Form button:hover{
+  background-color: #f8bddf;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+/* Reservation Page */
+.allMyReservation{
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #EBEBEB;
+  padding: 1.1em;
+}
+.reservation-list-page {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  margin: 3em 2em;
+  background-color: #EBEBEB;
+  padding: 1.5em 0em 1em;
+  border: 1px solid grey;
+}
+
+.reservation-list-page p{
+  margin: 0.2em;
+}
+
+.btn-reservation-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 1.9em;
+  background-color: #EBEBEB;
+}
+
+.delete-myReservation, .edit-myReservation{
+    width: 1em;
+    height: 1.2em;
+    margin: 1em 0.75em;
+}
+
+.reservation-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 0.5em;
+  height: auto;
+  background-color: #EBEBEB;
+}
+
+.form-reservation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1.6em 0em;
+  height: auto;
+}
+
+.form-reservation input{
+  margin: 0.5em;
+  padding: 0.4em;
+}
+
+.form-reservation button{
+  border-radius: 2em;
+  border: 0.5px solid black;
+  padding:  0.75em 1em;
+  transition: 0.5s;
+  margin: 1.5em;
+}
+
+.form-reservation button:hover{
+  background-color: #f8bddf;
+
+}
+
+
+
+
+
+.edit-reservation-form{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: #EBEBEB;
+  height: auto;
+  padding: 8.35em 0em;
+
+}
+
+.edit-reservation-form input{
+  margin: 0.5em 0em;
+}
+
+
+
+/*Confirmation Page */
+
+.confirmation-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20.5vh 0vh;
+  height: auto;
+  background-color: #EBEBEB;
+}
+
+
+
+/* Form Create service */
+.add-new-service, .edit-service-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3em 0em;
+  height: auto;
+  background-color: #EBEBEB;
+}
+.add-new-service input, .add-new-service textarea, 
+.edit-service-page input, .edit-service-page textarea,
+.edit-service-page select, .add-new-service select{
+  margin: 1em 0em 1em;
+  padding: 0.5em;
+}
+
+.add-new-service input:focus{
+  border: 2px solid #f8bddf;
+}
+.add-new-service button, .edit-service-page button{
+  border-radius: 2em;
+  border: 0.5px solid black;
+  padding:  0.75em 1em;
+  transition: 0.5s;
+}
+
+.add-new-service button:hover, .edit-service-page button:hover{
+  background-color: #f8bddf;
+  color: black;
+}
+
+
+
+
+
+
+
+/* Footer */
+.footer{
+  background-color: #074220;
+  color: white;
+  margin: 0em;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.footer ul{
+  display: flex;
+}
+.footer li{
+  list-style: none;
+  margin: 0.8em 1em;
+
+}
+
+.footer hr{
+  border: 1px solid white;
+  width: 95%;
+}
+
+.footer p{
+  margin: 0.8em 3em;
+}
+
+.footer .lawerText{
+  padding-bottom: 0.8em;
+}
+
+
+
+
+
+
+
+
+
+/* Contact Us */
+.contact-contianer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 15em;
+  background-color: #EBEBEB;
+  padding: 1em;
+  margin-bottom: 1.5em;
+}
+
+.email__from {
+  text-align: center;
+  height: 2em;
+  margin: 0.5em;
+}
+
+.message__box {
+  height: 18em;
+  margin: 0.8em 0em;
+}
+
+.contact_form button {
+  height: 40px;
+  background-color: #074220;
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  border-radius: 25px;
+}
+
+.contact_form button:hover{
+  background-color: #0e6f37;
+}
+
+
+
+.profile-picture {
+  width: 100px;
+}
+
+
+
+
+/*List of Service */
+
+
+
+.container-filter-by-place {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  flex-wrap: wrap;
+  padding: 2em 0em 1em 2.5em;
+  background-color: #EBEBEB;
+}
+
+.title-list h1{
+  text-align: center;
+  color: #074220;
+  font-size: 1.6em;
+  background-color: #EBEBEB;
+  padding-bottom: 0.5em;
+  margin: 0;
+}
+.filter-input {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  text-align: center;
+  margin: 0.5em;
+}
+
+.filter-input:hover {
+  border: 2px solid #f8bddf;
+  transition: 0.5s ease-out;
+}
+
+.filter-input:active {
+  border: 1px solid #f8bddf;
+}
+
+
+
+
+.list-of-services {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #EBEBEB;
+
+}
+
+.container-service-card-list {
+  width: 25%;
+  background-color: #EBEBEB;
+  overflow: hidden;
+  position: relative;
+  height: 40vh;
+}
+
+
+.description-service a{
+  padding: 0;
+  margin: 0em;
+}
+
+.description-list h1,
+.description-list h4{
+  margin: 0em 1em;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  transform: translateY(30px);
+  -webkit-transform: translateY(30px);
+} 
+
+.description-list h1{
+  font-size: 1.4em;
+  text-align: start;
+  margin: 0.2em 0em 0.2em 0.65em;
+} 
+
+.description-list h4{
+  font-weight: 400;
+}
+.img-service-list img{
+  width: 100%;
+  height: 40vh;
+}
+
+.container-service-card-list:hover .description-list{
+  opacity: 0.85;
+}
+
+.description-list{
+  background-color: #074220;
+  position: absolute;
+  text-align: start;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  opacity: 0;
+  width: 100%;
+  height: 50%;
+  top: 50%;
+}
+
+
+
+.available-status {
+  margin-left: 15px;
+}
+
+
+/* My service */
+
+/* For profil Service */
+
+
+.my-own-service{
+  text-align: center;
+  background-color: #EBEBEB;
+  color: #074220;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.Service-page-Btn{
+  position: absolute;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  opacity: 0;
+  left: 70%;
+  top:80%;
+}
+
+
+
+.edit-myService, .delete-myService{
+  max-width: 1em;
+  max-height: 1em;
+  cursor: pointer;
+  margin: 0em 0.5em;
+  background-color: white;
+
+}
+
+.list-of-myService{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #EBEBEB;
+  padding: 3em 0em;
+}
+
+.container-service-card-myList{
+  width: 25%;
+  background-color: #EBEBEB;
+  overflow: hidden;
+  position: relative;
+  height: 40vh;
+}
+
+.container-service-card-myList:hover .description-mylist, .container-service-card-myList:hover .Service-page-Btn{
+  opacity: 0.85;
+}
+
+.description-myService a{
+  padding: 0em;
+  margin: 0em;
+}
+
+.description-myService h1,
+.description-myService h4{
+  margin: 0em 1em;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  transform: translateY(30px);
+  -webkit-transform: translateY(30px);
+}
+
+
+.description-myService h1{
+  font-size: 1.4em;
+  text-align: start;
+  margin: 0.2em 0em 0.2em 0.65em;
+} 
+
+.description-myService h4{
+  font-weight: 400;
+}
+
+.img-service-myList img{
+  width: 100%;
+  height: 40vh;
+}
+
+.description-mylist{
+  background-color: #074220;
+  position: absolute;
+  text-align: start;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  opacity: 0;
+  width: 100%;
+  height: 70%;
+  top:50%;
+}
+
+
+
+
+
+
+/* profile field */
+.update-profile-form-container h2 {
+  text-align: center;
+  background-color: #EBEBEB;
+  margin: 0;
+  padding: 1em;
+}
+
+.update-profile-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 4.72em 0em;
+  height: auto;
+  background-color: #EBEBEB;
+}
+
+
+.update-profile-form input {
+  margin: 1em 0em 1em;
+  padding: 0.5em;
+}
+
+.update-profile-form button {
+  border-radius: 2em;
+  border: 0.5px solid black;
+  padding:  1em 1em;
+  transition: 0.5s;
+}
+.update-profile-form button:hover{
+  background-color: #f8bddf;
+  color: black;
+}
+
+.notification {
+  font-weight: bold;
+  color: red;
+}
+
+
+
+
+
+/* Ipad version */
+
+@media (max-width: 900px) and (min-width: 601px){
+
+
+  .App {
+    overflow: hidden;
+  }
+  
+  /* Loading sequence */
+  .loading{
+    text-align: center;
+    height: 63.5vh;
+    background-color: #EBEBEB;
+    margin: 0;
+    padding: 2em;
+  }
+  
+  .reservation-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 59.5vh;
+    background-color: #EBEBEB;
+    margin: 0;
+    padding: 2em;
+  }
+  
+  .reservation-message-service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 63.5vh;
+    background-color: #EBEBEB;
+    margin: 0;
+    padding: 2em;
+  }
+  /* Navbar */
+  
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+
+  .logo {
+    width: 3em;
+    height: auto;
+    margin-left: 1em;
+  }
+  
+  nav {
+    margin: 0px;
+    background-color: #074220;
+    display: flex;
+    height: 3.2em;
+  }
+  
+  nav ul{
+    list-style: none;
+    display: flex;
+  }
+  
+   nav a{
+    text-decoration: none;
+    color: white;
+    margin-left: 4em;
+    font-size: 0.9em;
+  }
+  
+  nav li:hover{
+    color: #f8bddf;
+  }
+  
+  nav .navbarAuth{
+    color: white;
+    position: absolute;
+    float: right;
+    right: 0;
+    padding-right: 2em;
+    cursor: pointer;
+    height: 1.2em;
+  }
+  nav .navbarAuth a{
+    margin: 0em 1.5em ;
+  }
+  nav .navbarAuth a:hover{
+    color: #f8bddf;
+  }
+  
+  
+  nav .btn-logout {
+    color: white;
+    position: absolute;
+    float: right;
+    right: 0;
+    padding-right: 2em;
+    cursor: pointer;
+  }
+    
+  .burger-bar,
+  .navbar-burger{
+  display: none;
+}
+  
+  /*HomePage css*/
+  .coverHomepage{
+    background-color: black;
+    height: 96vh;
+  }
+  
+  .coverHomepage img{
+    width: 95em;
+    height: 96vh;
+    position: relative;
+    margin: 0em;
+    opacity: 0.8;
+  }
+  
+  .coverHomepage .logo-home{
+    position: absolute;
+    width: 40%;
+    height: auto;
+    top: 30%;
+    left: 34%;
+    opacity: 1;
+  }
+  .coverHomepage h1 {
+    color: white;
+  }
+  
+  
+  .article-home{
+    width: 100%;
+    height: auto;
+    padding: 0em;
+  }
+  
+  .carousselHome{
+    display: flex;
+    flex-flow: row;
+    background-color: #074220;
+    width: 100%;
+    height: auto;
+    color: white;
+  }
+  
+  .carousselHome img{
+    width: 50%;
+    height: 40vh;
+  }
+  
+  .carousselHome h1, .carousselHome p, .carousselHome h3{
+    margin: 1.2em 2em;
+    text-decoration: none;
+  }
+  
+  .carousselHome h1{
+    font-size: 1.5em;
+  }
+  
+  .carousselHome p{
+    font-size: 1.2em;
+  }
+  
+  .carousselHome h3{
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: 0.5s;
+  }
+  
+  .carousselHome h3:hover{
+    color: #f8bddf;
+    text-decoration: underline;
+  }
+  
+
+  /*List of Service */
+  
+  .title-list h1{
+    text-align: center;
+    color: #074220;
+    font-size: 1.6em;
+    background-color: #EBEBEB;
+    padding-bottom: 1em;
+    margin: 0;
+  }
+  .filter-input {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    text-align: center;
+    margin: 0.5em;
+  }
+  
+  .filter-input:hover {
+    border: 2px solid #f8bddf;
+    transition: 0.5s ease-out;
+  }
+  
+  .filter-input:active {
+    border: 1px solid #f8bddf;
+  }
+  
+  
+  
+  
+  .list-of-services {
+    display: flex;
+    flex-flow: wrap row;
+    background-color: #EBEBEB;
+  
+  }
+  
+  .container-service-card-list {
+    width: 50%;
+    background-color: #EBEBEB;
+    position: relative;
+    height: 40vh;
+  }
+  
+  
+  .description-service a{
+    padding: 0;
+    margin: 0em;
+  }
+  
+  .description-list h1,
+  .description-list h4{
+    margin: 0em 1em;
+    text-decoration: none;
+    color: white;
+  } 
+  
+  .description-list h1{
+    font-size: 1.4em;
+    text-align: start;
+    margin: 0.2em 0em 0.2em 0.65em;
+  } 
+  
+  .description-list h4{
+    font-weight: 400;
+  }
+
+  .img-service-list img{
+    width: 100%;
+    height: 40vh;
+  }
+  
+  .description-list{
+    background-color: #074220;
+    position: absolute;
+    text-align: start;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+  }
+  
+  
+  
+  .available-status {
+    margin-left: 15px;
+  }
+
+
+  
+  /*Service details Page */
+  
+  .service-details {
+    display: flex;
+    flex-direction: column;
+    background-color: #EBEBEB;
+    overflow: hidden;
+    height: auto;
+  }
+
+
+  .image-details{
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+  }
+
+  .details-div {
+    padding: 3em 0em ;
+    margin: 0;
+    width: 100vw;
+  }
+  .details-div h2{
+    margin: 0em;
+    padding: 0em 3.2em;
+  }
+
+  .details-div h4, .details-div p{
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0em 5em;
+  }
+  
+  .all-review h4{
+    text-align: center;
+    margin: 0.5em;
+    width: 35em;
+  }
+  
+  .all-review{
+    overflow-y: scroll;
+    height: 10em;
+  }
+  
+  .review-details{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    background-color: #EBEBEB;
+  }
+
+  .add-review-div{
+    text-align: center;
+  }
+
+  .add-review-div h4{
+    padding: 0.5em;
+    margin: 0;
+  }
+  .add-review-div textarea{
+    width: 100%;
+    padding: 1.4em;
+  }
+  .add-review-div p{
+    margin: 0;
+    padding: 0.5em;
+  }
+
+  .add-review-div button{
+    margin: 0.5em;
+  }
+  .btn-details{
+    display: flex;
+  }
+  .btn-details a{
+    padding: 0;
+  }
+  .btn-details button{
+    margin-right: 0.5em;
+    padding: 0.5em;
+    transition: 0.2s;
+  }
+  
+  .btn-details button:hover{
+    border: #f8bddf 2px solid;
+  }
+  
+  .card-review{
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    background-color: #EBEBEB;
+    width: 90%;
+  }
+  
+  .star-render{
+    padding: 0.5em 1em 0em;
+    margin: 0em;
+  }
+  
+  .card-review p{
+    padding: 0.3em 1em 0em;
+    margin: 0em;
+  }
+  
+  .picture-name-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+  }
+  
+  .review-picture {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    margin-left: 1em;
+    margin-top: 0.5em;
+  }
+  
+  .deleteIcon, .editIcon{
+    width: 1em;
+    height: 1em;
+    margin: 0.5em;
+    float: right;
+    cursor: pointer;
+  }
+  
+  .edit-review-div{
+    background-color: #EBEBEB;
+  }
+
+  .edit-review{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: auto;
+    padding: 13.2em 0em;
+  }
+  
+  .edit-review input{
+    margin: 1em;
+  }
+  
+  .gold-star {
+    color: gold;
+  }
+
+  
+  
+  
+  
+  
+  /* Signup / Login */
+  .SignupPage-Container, .LoginPage-Container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 2em;
+    background-color: #EBEBEB;
+  }
+  
+  .signup-login {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .SignupPage-Form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3.6em;
+    height: auto;
+  
+  }
+  
+  .LoginPage-Form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 4.05em;
+    height: auto;
+  }
+  
+  .SignupPage-Form input, .LoginPage-Form input{
+    margin: 0.5em;
+    padding: 0.4em;
+  }
+  
+  .SignupPage-Form button, .LoginPage-Form button{
+    border-radius: 2em;
+    border: 0.5px solid black;
+    padding:  0.75em 1em;
+    transition: 0.5s;
+    margin: 0.5em;
+  }
+  
+  .SignupPage-Form button:hover, .LoginPage-Form button:hover{
+    background-color: #f8bddf;
+    color: black;
+  }
+  
+  
+  
+  
+  
+  
+    /* Profile Page */
+  
+    .profile {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      height: 70.8vh;
+      background-color: #EBEBEB;
+    }
+  
+  
+  
+  /* Reservation Page */
+  .allMyReservation{
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #EBEBEB;
+    padding: 1.1em;
+  }
+  .reservation-list-page {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin: 2em 1.5em;
+    background-color: #EBEBEB;
+    padding: 1.5em 0em 1em;
+    border: 1px solid grey;
+  }
+  
+  .reservation-list-page p{
+    margin: 0.2em;
+  }
+  
+  .btn-reservation-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1.9em;
+    background-color: #EBEBEB;
+  }
+  
+  .delete-myReservation, .edit-myReservation{
+      width: 1em;
+      height: 1.2em;
+      margin: 1em 0.75em;
+  }
+  
+  .reservation-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5.6em 0em;
+    height: auto;
+    background-color: #EBEBEB;
+  }
+  
+  .form-reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1.6em 0em;
+    height: auto;
+  }
+  
+  .form-reservation input{
+    margin: 0.5em;
+    padding: 0.4em;
+  }
+  
+  .form-reservation button{
+    border-radius: 2em;
+    border: 0.5px solid black;
+    padding:  0.75em 1em;
+    transition: 0.5s;
+    margin: 1.5em;
+  }
+  
+  .form-reservation button:hover{
+    background-color: #f8bddf;
+  
+  }
+  
+  
+  
+  
+  
+  .edit-reservation-form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: #EBEBEB;
+    height: auto;
+    padding: 8.35em 0em;
+  
+  }
+  
+  .edit-reservation-form input{
+    margin: 0.5em 0em;
+  }
+  
+  
+  
+  /*Confirmation Page */
+  
+  .confirmation-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20.5vh 0vh;
+    height: auto;
+    background-color: #EBEBEB;
+  }
+  
+  
+  
+  /* Form Create service */
+  .add-new-service, .edit-service-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3em 0em;
+    height: auto;
+    background-color: #EBEBEB;
+  }
+  .add-new-service input, .add-new-service textarea, 
+  .edit-service-page input, .edit-service-page textarea,
+  .edit-service-page select, .add-new-service select{
+    margin: 1em 0em 1em;
+    padding: 0.5em;
+  }
+  
+  .add-new-service input:focus{
+    border: 2px solid #f8bddf;
+  }
+  .add-new-service button, .edit-service-page button{
+    border-radius: 2em;
+    border: 0.5px solid black;
+    padding:  0.75em 1em;
+    transition: 0.5s;
+  }
+  
+  .add-new-service button:hover, .edit-service-page button:hover{
+    background-color: #f8bddf;
+    color: black;
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* Footer */
+  .footer{
+    background-color: #074220;
+    color: white;
+    margin: 0em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  
+  .footer ul{
+    display: flex;
+  }
+  .footer li{
+    list-style: none;
+    margin: 0.8em 1em;
+  
+  }
+  
+  .footer hr{
+    border: 1px solid white;
+    width: 95%;
+  }
+  
+  .footer p{
+    margin: 0.8em 3em;
+  }
+  
+  .footer .lawerText{
+    padding-bottom: 0.8em;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Contact Us */
+  .contact-contianer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em 0em 4em;
+  }
+  
+  .contact_form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 15em;
+    background-color: #EBEBEB;
+    padding: 1em;
+    margin-bottom: 1.5em;
+  }
+  
+  .email__from {
+    text-align: center;
+    height: 2em;
+    margin: 0.5em;
+  }
+  
+  .message__box {
+    height: 18em;
+    margin: 0.8em 0em;
+  }
+  
+  .contact_form button {
+    height: 40px;
+    background-color: #074220;
+    color: white;
+    text-transform: uppercase;
+    font-size: 15px;
+    border-radius: 25px;
+  }
+  
+  .contact_form button:hover{
+    background-color: #0e6f37;
+  }
+  
+  
+  
+  .profile-picture {
+    width: 100px;
+  }
+  
+  
+  
+  
+  
+  
+  /* My service */
+  
+  /* For profil Service */
+  
+  
+  .my-own-service{
+    text-align: center;
+    background-color: #EBEBEB;
+    color: #074220;
+    margin: 0;
+    padding: 0.5em;
+  }
+  
+  .Service-page-Btn{
+    position: absolute;
+    opacity: 0.8;
+    left: 70%;
+    top:80%;
+  }
+  
+  
+  
+  .edit-myService, .delete-myService{
+    max-width: 1em;
+    max-height: 1em;
+    cursor: pointer;
+    margin: 0em 0.5em;
+    background-color: white;
+  
+  }
+  
+  .list-of-myService{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #EBEBEB;
+    padding: 3em 0em 0em;
+  }
+  
+  .container-service-card-myList{
+    width: 50%;
+    background-color: #EBEBEB;
+    overflow: hidden;
+    position: relative;
+    height: 40vh;
+  }
+    
+  .description-myService a{
+    padding: 0em;
+    margin: 0em;
+  }
+  
+  .description-myService h1,
+  .description-myService h4{
+    margin: 0em 1em;
+    text-decoration: none;
+    color: white;
+  }
+  
+  
+  .description-myService h1{
+    font-size: 1.4em;
+    text-align: start;
+    margin: 0.2em 0em 0.2em 0.65em;
+  } 
+  
+  .description-myService h4{
+    font-weight: 400;
+  }
+  
+  .img-service-myList img{
+    width: 100%;
+    height: 40vh;
+  }
+  
+  .description-mylist{
+    background-color: #074220;
+    position: absolute;
+    text-align: start;
+    opacity: 0.8;
+    width: 100%;
+    height: 70%;
+    top:50%;
+  }
+  
+  
+  
+  
+  
+  
+  /* profile field */
+  .update-profile-form-container h2 {
+    text-align: center;
+    background-color: #EBEBEB;
+    margin: 0;
+    padding: 1em;
+  }
+  
+  .update-profile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 4.72em 0em;
+    height: auto;
+    background-color: #EBEBEB;
+  }
+  
+  
+  .update-profile-form input {
+    margin: 1em 0em 1em;
+    padding: 0.5em;
+  }
+  
+  .update-profile-form button {
+    border-radius: 2em;
+    border: 0.5px solid black;
+    padding:  1em 1em;
+    transition: 0.5s;
+  }
+  .update-profile-form button:hover{
+    background-color: #f8bddf;
+    color: black;
+  }
+
+  .filter-input {
+    display: flex;
+    flex-wrap: wrap;
+    width: 15em;
+    height: 2.2em;
+    text-align: center;
+  }
+  
+  .filter-input:hover {
+    border: 2px solid #f8bddf;
+    transition: 0.5s ease-out;
+  }
+  
+  .filter-input:active {
+    border: 2px solid #f8bddf;
+  }
+}
+
+
+
+@media (max-width: 600px) and (min-width: 300px){
+
+  .App {
+    overflow: hidden;
+  }
+  
+  /* Loading sequence */
+  .loading{
+    text-align: center;
+    height: 63.5vh;
+    background-color: #EBEBEB;
+    margin: 0;
+    padding: 2em;
+  }
+  
+  .reservation-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 59.5vh;
+    background-color: #EBEBEB;
+    margin: 0;
+    padding: 2em;
+  }
+  
+  .reservation-message-service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60.5vh;
+    background-color: #EBEBEB;
+    margin: 0;
+    padding: 2em;
+  }
+   /*Navbar */
+
+   .logo{
+    width: 4em;
+    height: auto;
+    margin-left: 0em;
+  } 
+  
+  .hide-nav{
+    display: none;
+  }
+
+  .showNav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 5em 0em;
+    margin: 0;
+    background-color: #074220;
+    z-index: 3;
+  }
+  
+  
+  .showNav {
+    width: 100vw;
+    right: 0;
+
+  }
+
+  .showNav  a{
+    flex-direction: column;
+    display: block;
+    color: white;
+    font-size: 1.5em;
+    margin: 1.5em ;
+
+  }
+  
+  .showNav li:hover{
+    color: #f8bddf;
+  }
+  
+  .showNav .navbarAuth{
+    color: white;
+    position: fixed;
+    float: none;
+    right:auto;
+    flex-direction: column;
+    display: block;
+    font-size: 0.9em;
+    padding: 3em;
+    margin-top: 13em;
+    height: 1em;
+
+  }
+  nav .navbarAuth a{
+    margin: 3em 1.5em ;
+  }
+  nav .navbarAuth a:hover{
+    color: #f8bddf;
+  }
+  
+  
+  nav .btn-logout {
+    color: white;
+    position: fixed;
+    float: none;
+    right:auto;
+    flex-direction: column;
+    display: block;
+    font-size: 0.9em;
+    padding: 3em;
+    margin-top: 30rem;
+    height: 1em;
+  } 
+  .navbar-burger{
+    display: block;
+    position: absolute;
+    top: 1.8em;
+    right: 2em;
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+  }
+  .navbar-burger.open{
+    position: fixed;
+    z-index: 4;
+  }
+
+  .burger-bar,
+  .burger-bar::before,
+  .burger-bar::after{
+    display: block;
+    width: 40px;
+    height: 4px;
+    position: relative;
+    border-radius: 3px;
+    background-color: white;
+    transition: all .5s ease-in-out;
+  }
+
+  .burger-bar::before,
+  .burger-bar::after{
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  .burger-bar::before{
+    transform: translateY(-12px);
+    
+  }
+  .burger-bar::after{
+    transform: translateY(12px);
+  }
+
+  .navbar-burger.open .burger-bar:before{
+    transform: rotate(45deg);
+  }
+
+  .navbar-burger.open .burger-bar::after{
+    transform: rotate(-45deg);
+  }
+
+  .navbar-burger.open .burger-bar{
+    height: 0;
+    background: transparent;
+  }
+ 
+
+  /*HomePage css*/
+  .coverHomepage{
+    background-color: black;
+    height: 95vh;
+  }
+  
+  .coverHomepage img{
+    width: 100em;
+    height: 95vh;
+    position: relative;
+    margin: 0em;
+    opacity: 0.8;
+  }
+  
+  .coverHomepage .logo-home{
+    position: absolute;
+    width: 55%;
+    height: auto;
+    top: 40%;
+    left: 25%;
+    opacity: 1;
+  }
+  .coverHomepage h1 {
+    color: white;
+  }
+  
+  
+  .article-home{
+    width: 100%;
+    height: auto;
+    padding: 0em;
+  }
+  
+  .carousselHome{
+    display: flex;
+    flex-flow: column;
+    background-color: #074220;
+    width: 100%;
+    height: auto;
+    color: white;
+  }
+  
+  .carousselHome img{
+    width: 100%;
+    height: 40vh;
+  }
+  
+  .carousselHome h1, .carousselHome p, .carousselHome h3{
+    margin: 1.2em 2em;
+    text-decoration: none;
+  }
+  
+  .carousselHome h1{
+    font-size: 1.5em;
+  }
+  
+  .carousselHome p{
+    font-size: 1.2em;
+  }
+  
+  .carousselHome h3{
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: 0.5s;
+  }
+  
+  .carousselHome h3:hover{
+    color: #f8bddf;
+    text-decoration: underline;
+  }
+  
+
+  /*List of Service */
+  
+  .title-list h1{
+    text-align: center;
+    color: #074220;
+    font-size: 1.6em;
+    background-color: #EBEBEB;
+    padding-bottom: 1em;
+    margin: 0;
+  }
+
+
+  .filter-input {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    text-align: center;
+    margin: 0.5em;
+  }
+  
+  .filter-input:hover {
+    border: 2px solid #f8bddf;
+    transition: 0.5s ease-out;
+  }
+  
+  .filter-input:active {
+    border: 1px solid #f8bddf;
+  }
+  
+  
+  
+  
+  .list-of-services {
+    display: flex;
+    flex-flow: wrap column;
+    background-color: #EBEBEB;
+  
+  }
+  
+  .container-service-card-list {
+    width: 100%;
+    background-color: #EBEBEB;
+    position: relative;
+    height: 40vh;
+  }
+  
+  
+  .description-service a{
+    padding: 0;
+    margin: 0em;
+  }
+  
+  .description-list h1,
+  .description-list h4{
+    margin: 0em 1em;
+    text-decoration: none;
+    color: white;
+  } 
+  
+  .description-list h1{
+    font-size: 1.4em;
+    text-align: start;
+    margin: 0.2em 0em 0.2em 0.65em;
+  } 
+  
+  .description-list h4{
+    font-weight: 400;
+  }
+
+  .img-service-list img{
+    width: 100%;
+    height: 40vh;
+  }
+  
+  .description-list{
+    background-color: #074220;
+    position: absolute;
+    text-align: start;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+  }
+  
+  
+  
+  .available-status {
+    margin-left: 15px;
+  }
+
+
+  
+  /*Service details Page */
+  
+  .service-details {
+    display: flex;
+    flex-direction: column;
+    background-color: #EBEBEB;
+    overflow: hidden;
+    height: auto;
+  }
+
+
+  .image-details{
+    width: 100vw;
+    height: 35vh;
+    display: flex;
+  }
+
+  .details-div {
+    padding: 3em 0em ;
+    margin: 0;
+    width: 100vw;
+  }
+  .details-div h2{
+    margin: 0em;
+    padding: 0em 1em;
+  }
+
+  .details-div h4, .details-div p{
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0em 1.5em;
+  }
+  
+  .review-title{
+    text-align: center;
+    width: 10em;
+  }
+  
+  .all-review{
+    overflow-y: scroll;
+    height: 10em;
+    width: 80%;
+  }
+  
+  .review-details{
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0.5em;
+    background-color: #EBEBEB;
+  }
+
+  .add-review-div{
+    text-align: center;
+  }
+
+  .add-review-div h4{
+    padding: 0.5em;
+    margin: 0;
+  }
+  .add-review-div textarea{
+    width: 100%;
+    padding: 1.4em;
+  }
+  .add-review-div p{
+    margin: 0;
+    padding: 0.5em;
+  }
+
+  .add-review-div button{
+    margin: 0.5em;
+  }
+  .btn-details{
+    display: flex;
+  }
+  .btn-details a{
+    padding: 0;
+  }
+  .btn-details button{
+    margin-right: 0.5em;
+    padding: 0.5em;
+    transition: 0.2s;
+  }
+  
+  .btn-details button:hover{
+    border: #f8bddf 2px solid;
+  }
+  
+  .card-review{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    background-color: #EBEBEB;
+    width: 90%;
+  }
+  
+  .star-render{
+    padding: 0.5em 1em 0em;
+    margin: 0em;
+  }
+  
+  .card-review p{
+    padding: 0.3em 1em 0em;
+    margin: 0em;
+  }
+  
+  .picture-name-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+  }
+  
+  .review-picture {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    margin-left: 1em;
+    margin-top: 0.5em;
+  }
+  
+  .deleteIcon, .editIcon{
+    width: 1em;
+    height: 1em;
+    margin: 0.5em;
+    float: right;
+    cursor: pointer;
+  }
+  
+  .edit-review-div{
+    background-color: #EBEBEB;
+  }
+
+  .edit-review{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: auto;
+    padding: 13.2em 0em;
+  }
+  
+  .edit-review input{
+    margin: 1em;
+  }
+  
+  .gold-star {
+    color: gold;
+  }
+
+  
+  
+  
+  
+  
+  
+  /* Signup / Login */
+  .SignupPage-Container, .LoginPage-Container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 2em;
+    background-color: #EBEBEB;
+  }
+  
+  .signup-login {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .SignupPage-Form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1.5em;
+    height: auto;
+  
+  }
+  
+  .LoginPage-Form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 7.65em;
+    height: auto;
+  }
+  
+  .SignupPage-Form input, .LoginPage-Form input{
+    margin: 0.5em;
+    padding: 0.4em;
+  }
+  
+  .SignupPage-Form button, .LoginPage-Form button{
+    border-radius: 2em;
+    border: 0.5px solid black;
+    padding:  0.75em 1em;
+    transition: 0.5s;
+    margin: 0.5em;
+  }
+  
+  .SignupPage-Form button:hover, .LoginPage-Form button:hover{
+    background-color: #f8bddf;
+    color: black;
+  }
+  
+  
+  
+  
+  
+  
+    /* Profile Page */
+  
+    .profile {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      height: 70.8vh;
+      background-color: #EBEBEB;
+    }
+  
+  
+  
+  /* Reservation Page */
+  .allMyReservation{
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #EBEBEB;
+    padding: 1.1em;
+  }
+  .reservation-list-page {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 2em 2em;
+    background-color: #EBEBEB;
+    padding: 1em 0em 1em;
+    border: 1px solid grey;
+  }
+  
+  .reservation-list-page p{
+    margin: 0.2em;
+  }
+  
+  .btn-reservation-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1.9em;
+    background-color: #EBEBEB;
+  }
+  
+  .delete-myReservation, .edit-myReservation{
+      width: 1em;
+      height: 1.2em;
+      margin: 1em 0.75em;
+  }
+  
+  .reservation-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5.6em 0em;
+    height: auto;
+    background-color: #EBEBEB;
+  }
+  
+  .form-reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1.6em 0em;
+    height: auto;
+  }
+  
+  .form-reservation input{
+    margin: 0.5em;
+    padding: 0.4em;
+  }
+  
+  .form-reservation button{
+    border-radius: 2em;
+    border: 0.5px solid black;
+    padding:  0.75em 1em;
+    transition: 0.5s;
+    margin: 1.5em;
+  }
+  
+  .form-reservation button:hover{
+    background-color: #f8bddf;
+  
+  }
+  
+  
+  
+  
+  
+  .edit-reservation-form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: #EBEBEB;
+    height: auto;
+    padding: 11.6em 0em;
+  
+  }
+  
+  .edit-reservation-form input{
+    margin: 0.5em 0em;
+  }
+  
+  
+  
+  /*Confirmation Page */
+  
+  .confirmation-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 23.7vh 0vh;
+    height: auto;
+    background-color: #EBEBEB;
+  }
+  
+  
+  
+  /* Form Create service */
+  .add-new-service, .edit-service-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3em 0em;
+    height: auto;
+    background-color: #EBEBEB;
+  }
+  .add-new-service input, .add-new-service textarea, 
+  .edit-service-page input, .edit-service-page textarea,
+  .edit-service-page select, .add-new-service select{
+    margin: 1em 0em 1em;
+    padding: 0.5em;
+  }
+  
+  .add-new-service input:focus{
+    border: 2px solid #f8bddf;
+  }
+  .add-new-service button, .edit-service-page button{
+    border-radius: 2em;
+    border: 0.5px solid black;
+    padding:  0.75em 1em;
+    transition: 0.5s;
+  }
+  
+  .add-new-service button:hover, .edit-service-page button:hover{
+    background-color: #f8bddf;
+    color: black;
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* Footer */
+  .footer{
+    background-color: #074220;
+    color: white;
+    margin: 0em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  
+  .footer ul{
+    display: flex;
+    flex-flow:column;
+  }
+  .footer li{
+    list-style: none;
+    margin: 0.2em 0.2em;
+    font-size: 0.8em;
+  
+  }
+  
+  .footer hr{
+    border: 1px solid white;
+    width: 95%;
+  }
+  
+  .footer p{
+    margin: 0.8em 3em;
+  }
+  
+  .footer .lawerText{
+    padding-bottom: 0.8em;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Contact Us */
+  .contact-contianer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em 2em 4em;
+  }
+  
+  .contact_form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 18em;
+    background-color: #EBEBEB;
+    padding: 1em;
+    margin-bottom: 1.5em;
+  }
+  
+  .email__from {
+    text-align: center;
+    height: 2em;
+    margin: 0.5em;
+  }
+  
+  .message__box {
+    height: 18em;
+    margin: 0.8em 0em;
+  }
+  
+  .contact_form button {
+    height: 40px;
+    background-color: #074220;
+    color: white;
+    text-transform: uppercase;
+    font-size: 15px;
+    border-radius: 25px;
+  }
+  
+  .contact_form button:hover{
+    background-color: #0e6f37;
+  }
+  
+  
+  
+  .profile-picture {
+    width: 100px;
+  }
+  
+  
+  
+  
+  
+  
+  /* My service */
+  
+  /* For profil Service */
+  
+  
+  .my-own-service{
+    text-align: center;
+    background-color: #EBEBEB;
+    color: #074220;
+    margin: 0;
+    padding: 0.5em;
+  }
+  
+  .Service-page-Btn{
+    position: absolute;
+    opacity: 0.8;
+    left: 70%;
+    top:80%;
+  }
+  
+  
+  
+  .edit-myService, .delete-myService{
+    max-width: 1em;
+    max-height: 1em;
+    cursor: pointer;
+    margin: 0em 0.5em;
+    background-color: white;
+  
+  }
+  
+  .list-of-myService{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #EBEBEB;
+    padding: 3em 0em 0em;
+  }
+  
+  .container-service-card-myList{
+    width: 100%;
+    background-color: #EBEBEB;
+    overflow: hidden;
+    position: relative;
+    height: 40vh;
+  }
+    
+  .description-myService a{
+    padding: 0em;
+    margin: 0em;
+  }
+  
+  .description-myService h1,
+  .description-myService h4{
+    margin: 0em 1em;
+    text-decoration: none;
+    color: white;
+  }
+  
+  
+  .description-myService h1{
+    font-size: 1.4em;
+    text-align: start;
+    margin: 0.2em 0em 0.2em 0.65em;
+  } 
+  
+  .description-myService h4{
+    font-weight: 400;
+  }
+  
+  .img-service-myList img{
+    width: 100%;
+    height: 40vh;
+  }
+  
+  .description-mylist{
+    background-color: #074220;
+    position: absolute;
+    text-align: start;
+    opacity: 0.8;
+    width: 100%;
+    height: 70%;
+    top:50%;
+  }
+  
+  
+  
+  
+  
+  
+  /* profile field */
+  .update-profile-form-container h2 {
+    text-align: center;
+    background-color: #EBEBEB;
+    margin: 0;
+    padding: 1em;
+  }
+  
+  .update-profile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 4.72em 0em;
+    height: auto;
+    background-color: #EBEBEB;
+  }
+  
+  
+  .update-profile-form input {
+    margin: 1em 0em 1em;
+    padding: 0.5em;
+  }
+  
+  .update-profile-form button {
+    border-radius: 2em;
+    border: 0.5px solid black;
+    padding:  1em 1em;
+    transition: 0.5s;
+  }
+  .update-profile-form button:hover{
+    background-color: #f8bddf;
+    color: black;
+  }
+
+  .filter-input {
+    display: flex;
+    flex-wrap: wrap;
+    width: 10em;
+    height: 2.2em;
+    text-align: center;
+  }
+  
+  .filter-input:hover {
+    border: 2px solid #f8bddf;
+    transition: 0.5s ease-out;
+  }
+  
+  .filter-input:active {
+    border: 2px solid #f8bddf;
   }
 }
