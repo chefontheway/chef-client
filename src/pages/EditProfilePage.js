@@ -67,7 +67,7 @@ function EditProfilePage () {
           onChange={e => {setName(e.target.value)}}
         />
 
-        <img src={picture} alt="img"/>
+        <img src={picture} alt="img" className="image-edit-profile"/>
         <input
           type="file"
           name="picture"
