@@ -212,7 +212,7 @@ const EditServicesPage = () => {
 
     return (
         <div >
-            <h2 style={{textAlign: "center"}}>Edit Service</h2>
+            <h2 className='edit-service-title'>Edit Service</h2>
             <form onSubmit={handleSubmit} encType="multipart/form-data" className="edit-service-page">
                 <label>Speciality</label>
                 <input 

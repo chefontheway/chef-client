@@ -598,6 +598,7 @@ text-align: center;
   height: auto;
   background-color: #EBEBEB;
 }
+
 .add-new-service input, .add-new-service textarea, 
 .edit-service-page input, .edit-service-page textarea,
 .edit-service-page select, .add-new-service select{
@@ -622,7 +623,10 @@ text-align: center;
 
 
 
-
+/* Edit-service-page */
+.edit-service-title {
+  text-align: center !important;
+}
 
 
 
