@@ -46,7 +46,6 @@ function AddNewService(props) {
       availability
     };
 
-
     axios
       .post(`${API_URL}/api/services`, requestBodyService, {
         headers: { Authorization: `Bearer ${storeToken}` },

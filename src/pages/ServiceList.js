@@ -38,6 +38,7 @@ function ServiceList() {
     getAllService();
   }, [place, pricePerPerson]);
 
+  console.log(services)
 
   if (services === undefined) {
     return <h1 className="loading">Loading...</h1>;

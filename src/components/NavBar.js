@@ -15,7 +15,7 @@ function NavBar() {
   const closeMenu = () => {
     setShowLink(false);
   }
-  // console.log(showLink);
+  
   return (
     <div>
       <nav>

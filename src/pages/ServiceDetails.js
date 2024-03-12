@@ -43,7 +43,7 @@ function ServiceDetails(props){
     const serviceIdFromServiceDetailsPage = localStorage.getItem("serviceId");
     
     const checkIfInclude = serviceIdFromReservationListPage && serviceIdFromReservationListPage.includes(serviceIdFromServiceDetailsPage);
-    
+
     if(services === undefined){
         return(<h1 className="loading">Loading...</h1>);
     } else {      
