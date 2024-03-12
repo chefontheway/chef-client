@@ -13,16 +13,25 @@ function ServiceList() {
 
   const getAllService = () => {
     axios
-      .get(`${API_URL}/api/services`, { headers: { Authorization: `Bearer ${storeToken}` }})
-      .then((result) => {
+    .get(`${API_URL}/api/services`, { headers: { Authorization: `Bearer ${storeToken}` }})
+    .then((result) => {
+      console.log(result.data); // Debugging: Log the data to inspect its structure
+      if (Array.isArray(result.data)) { // Check if the response is an array
         let filteredServices = result.data.filter((element) => {
           const matchesPlace = element.place.toLowerCase().includes(place.toLowerCase());
           const matchesPrice = pricePerPerson === '' || element.pricePerPerson <= parseFloat(pricePerPerson);
           return matchesPlace && matchesPrice;
         });
         setServices(filteredServices);
-      })
-      .catch((error) => console.log(error));
+      } else {
+        console.error('Expected an array but received:', result.data);
+        setServices([]); // Fallback to an empty array or handle as needed
+      }
+    })
+    .catch((error) => {
+      console.log(error); // Error handling
+    });
+
   };
 
   useEffect(() => {
