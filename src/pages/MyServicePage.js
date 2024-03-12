@@ -1,17 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import MyServiceCard from '../components/MyServiceList'
 import { Link } from "react-router-dom";
 import MyServiceList from "../components/MyServiceList";
 
 function MyServicePage(props) {
   const API_URL = process.env.REACT_APP_SERVER_URL
-  
   const [myServices, setMyServices] = useState(undefined);
+  const storeToken = localStorage.getItem("authToken");
 
   const getAllMyServices = () => {
-    const storeToken = localStorage.getItem("authToken");
-
     axios
       .get(`${API_URL}/api/myService`, {
         headers: { Authorization: `Bearer ${storeToken}` },
@@ -22,9 +19,10 @@ function MyServicePage(props) {
       .catch((e) => console.log(e));
   };
 
-  const deleteService = (serviceId) => {
-    const storeToken = localStorage.getItem("authToken");
 
+  const deleteService = (serviceId) => {
+
+    console.log(serviceId)
     axios
       .delete(`${API_URL}/api/services/${serviceId}`, {
         headers: { Authorization: `Bearer ${storeToken}` },
