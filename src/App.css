@@ -2121,6 +2121,10 @@ text-align: center;
   .filter-input:active {
     border: 1px solid #f8bddf;
   }
+
+  .service-list-container {
+    margin-bottom: 5em;
+  }
   
   .list-of-services {
     display: flex;
