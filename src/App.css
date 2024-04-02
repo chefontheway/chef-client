@@ -1615,7 +1615,6 @@ text-align: center;
   .footer{
     background-color: #074220;
     color: white;
-    margin: 0;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -2535,17 +2534,10 @@ text-align: center;
     color: black;
   }
   
-  
-  
-  
-  
-  
-  
   /* Footer */
   .footer{
     background-color: #074220;
     color: white;
-    margin: 0em;
     width: 100%;
     display: flex;
     flex-wrap: wrap;

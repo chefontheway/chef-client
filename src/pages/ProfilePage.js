@@ -1,36 +1,20 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 function ProfilePage() {
-  const storedToken = localStorage.getItem("authToken");
   const getTheLengthOfOrderList = localStorage.getItem("lengthOfOrder");
   const getMyWorkLength = localStorage.getItem("myWorkLength");
   const getUserIdWhoReserve = localStorage.getItem("userIdWhoReserve");
   const getOwnerId = localStorage.getItem("ownerId");
   
-  const API_URL = process.env.REACT_APP_SERVER_URL; 
   const { isLoggedIn, user } = useContext(AuthContext);
-  const[profile, setProfile] = useState("");
-  const[notificationOrder, setNotificationOrder] = useState("");
-  const[notificationWork, setNotificationWork] = useState("");
-
-  const fetchingProfile = () => {
-    axios.get(`${API_URL}/api/profile`, { headers : { Authorization: `Bearer ${storedToken}`}})
-      .then(response => {
-        setProfile(response.data)
-      })
-      .catch(e => console.log("failed fetching data"));
-  };
+  const [notificationOrder, setNotificationOrder] = useState("");
+  const [notificationWork, setNotificationWork] = useState("");
 
   useEffect(() => {
-    fetchingProfile();
-  }, []);
-
-  useEffect(() => {
-    if(profile && getUserIdWhoReserve) {
-      const profileInArray = [profile._id];
+    if(user && getUserIdWhoReserve) {
+      const profileInArray = [user._id];
       const getUserIdWhoReserveInArray = getUserIdWhoReserve ? [getUserIdWhoReserve] : [];
       const checkIfTrueOrderUserId = getUserIdWhoReserveInArray.some(id => profileInArray.includes(id));
 
@@ -46,7 +30,7 @@ function ProfilePage() {
     } else {
         setNotificationWork("");
     }
-  }, [profile, getTheLengthOfOrderList, getMyWorkLength, getUserIdWhoReserve, getOwnerId, user]);
+  }, [user, getTheLengthOfOrderList, getMyWorkLength, getUserIdWhoReserve, getOwnerId]);
 
   return (
     <div>
@@ -70,14 +54,14 @@ function ProfilePage() {
     
       <div className="profile">
         {isLoggedIn && user && (
-          <div key={profile._id}>
-            <h1>Welcome {profile.name}</h1>
+          <div key={user._id}>
+            <h1>Welcome {user.name}</h1>
             <div>
-              <img src={profile.picture} alt="img" className="profile-picture"/>
+              <img src={user.picture} alt="img" className="profile-picture"/>
             </div>
-            <h3>Address: {profile.address}</h3>
-            <p>Email: {profile.email}</p>
-            <Link to={`/profile/edit/${profile._id}`}>
+            <h3>Address: {user.address}</h3>
+            <p>Email: {user.email}</p>
+            <Link to={`/profile/edit/${user._id}`}>
               <button>Edit Profile</button>
             </Link>
           </div>
@@ -88,3 +72,4 @@ function ProfilePage() {
 }
 
 export default ProfilePage;
+
