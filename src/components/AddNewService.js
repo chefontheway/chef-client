@@ -67,7 +67,7 @@ function AddNewService(props) {
   };
 
   return (
-    <div>
+    <div className="create-service-page">
       <div className="btn-reservation-list">
         <Link to="/reservations">
           <button>Your Order</button>

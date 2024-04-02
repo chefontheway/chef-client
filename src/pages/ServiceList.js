@@ -15,8 +15,7 @@ function ServiceList() {
     axios
     .get(`${API_URL}/api/services`, { headers: { Authorization: `Bearer ${storeToken}` }})
     .then((result) => {
-      console.log(result.data); // Debugging: Log the data to inspect its structure
-      if (Array.isArray(result.data)) { // Check if the response is an array
+      if (Array.isArray(result.data)) {
         let filteredServices = result.data.filter((element) => {
           const matchesPlace = element.place.toLowerCase().includes(place.toLowerCase());
           const matchesPrice = pricePerPerson === '' || element.pricePerPerson <= parseFloat(pricePerPerson);
@@ -25,7 +24,7 @@ function ServiceList() {
         setServices(filteredServices);
       } else {
         console.error('Expected an array but received:', result.data);
-        setServices([]); // Fallback to an empty array or handle as needed
+        setServices([]); 
       }
     })
     .catch((error) => {
@@ -37,8 +36,6 @@ function ServiceList() {
   useEffect(() => {
     getAllService();
   }, [place, pricePerPerson]);
-
-  console.log(services)
 
   if (services === undefined) {
     return <h1 className="loading">Loading...</h1>;

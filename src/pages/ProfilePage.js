@@ -33,7 +33,7 @@ function ProfilePage() {
   }, [user, getTheLengthOfOrderList, getMyWorkLength, getUserIdWhoReserve, getOwnerId]);
 
   return (
-    <div>
+    <div className="profile-page-container">
       <div className="btn-reservation-list">
         <Link to="/create">
           <button>Create Service</button>

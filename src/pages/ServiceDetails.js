@@ -48,7 +48,7 @@ function ServiceDetails(props){
         return(<h1 className="loading">Loading...</h1>);
     } else {      
         return (
-            <div>
+            <div className="service-details-container">
                 <div className="service-details">
                     <div>
                         {services.picture ? <img src={services.picture} alt="Service" className="image-details"/> : <p>No picture available</p>}

@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import deleteImg from "../images/delete-icon.png"
 import editImg from "../images/edit-icon.png"
-import EditReviewPage from "../pages/EditReviewPage";
 
 const API_URL = process.env.REACT_APP_SERVER_URL;
 

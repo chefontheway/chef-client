@@ -36,6 +36,12 @@
 }
 /* Navbar */
 
+.navbar-container {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
 nav {
   margin: 0px;
   background-color: #074220;
@@ -111,6 +117,11 @@ nav .btn-logout {
 
 
 /*HomePage css*/
+
+.home-page {
+  margin-top: 3.2rem;
+}
+
 .coverHomepage{
   background-color: black;
   height: 94vh;
@@ -280,6 +291,10 @@ div.carousselHome div a h3.animate {
 
 /* Profile Page */
 
+.profile-page-container {
+  margin-top: 3.2rem;
+}
+
 .profile {
   display: flex;
   justify-content: center;
@@ -293,7 +308,12 @@ div.carousselHome div a h3.animate {
   width: 70%;
 }
 
+
+
 /*Service details Page */
+.service-details-container {
+  margin-top: 3.2rem;
+}
 
 .service-details {
   display: flex;
@@ -514,6 +534,7 @@ text-align: center;
   justify-content: center;
   padding-top: 1.9em;
   background-color: #EBEBEB;
+  margin-top: 3.2rem;
 }
 
 .delete-myReservation, .edit-myReservation{
@@ -667,6 +688,7 @@ text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 3.2rem;
 }
 
 .contact_form {
@@ -710,6 +732,10 @@ text-align: center;
 }
 
 /*List of Service */
+
+.service-list-container {
+  margin-top: 3.2rem;
+}
 
 .container-filter-by-place {
   display: flex;
@@ -820,9 +846,6 @@ text-align: center;
   margin-left: 15px;
 }
 
-
-/* My service */
-
 /* For profil Service */
 
 
@@ -927,11 +950,11 @@ text-align: center;
 }
 
 
-
-
-
-
 /* profile field */
+.update-profile-form-container {
+  margin-top: 3.2rem;
+}
+
 .update-profile-form-container h2 {
   text-align: center;
   background-color: #EBEBEB;
@@ -1451,18 +1474,17 @@ text-align: center;
   
   
   
-    /* Profile Page */
-  
-    .profile {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      text-align: center;
-      height: 70.8vh;
-      background-color: #EBEBEB;
-    }
-  
-  
+  /* Profile Page */
+
+  .profile {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 70.8vh;
+    background-color: #EBEBEB;
+  }
+    
   
   /* Reservation Page */
   .allMyReservation{
@@ -2086,6 +2108,8 @@ text-align: center;
   
 
   /*List of Service */
+
+  
   
   .title-list h1{
     text-align: center;
