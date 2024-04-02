@@ -1,5 +1,5 @@
 .App {
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 /* Loading sequence */
@@ -1938,10 +1938,12 @@ text-align: center;
     right:auto;
     flex-direction: column;
     font-size: 0.9em;
-    padding-top: 8rem;
-    margin-top: 13em;
     height: 1em;
 
+  }
+
+  nav .navbarAuth {
+    position: static;
   }
 
   nav .navbarAuth a{
