@@ -1936,10 +1936,9 @@ text-align: center;
     color: white;
     float: none;
     right:auto;
-    flex-direction: column;
     font-size: 0.9em;
     height: 1em;
-
+    padding: 1em;
   }
 
   nav .navbarAuth {
