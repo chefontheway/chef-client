@@ -7,12 +7,10 @@ const API_URL = process.env.REACT_APP_SERVER_URL;
 function EditProfilePage () {
   const {userId} = useParams();
   const navigate = useNavigate();
-  
   const[name, setName] = useState("");
   const[picture, setPicture] = useState("");
   const[address, setAddress] = useState("");
   const[email, setEmail] = useState("");
-
   const storedToken = localStorage.getItem("authToken");
 
   const uploadImage = (file) => {
@@ -43,7 +41,7 @@ function EditProfilePage () {
         setEmail(oneData.email);
       })
       .catch(e => console.log("error fetching the profile", e));
-  }, [])
+  }, [storedToken, userId])
   
   const updateProfile = (e) => {
     e.preventDefault();

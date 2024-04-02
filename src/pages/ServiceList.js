@@ -44,8 +44,7 @@ function ServiceList() {
     return <h1 className="loading">Loading...</h1>;
   } else {
     return (
-      <div>
-
+      <div className="service-list-container">
         <div className="container-filter-by-place">
           <input
             type="text"

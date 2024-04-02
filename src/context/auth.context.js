@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 
 const AuthContext = React.createContext();
@@ -11,62 +11,48 @@ function AuthProviderWrapper(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
  
-  
   const storeToken = (token) => {
     localStorage.setItem('authToken', token);
   }  
-
   
-  const authenticateUser = () => {         
-    // Get the stored token from the localStorage
+  const authenticateUser = useCallback(() => {         
     const storedToken = localStorage.getItem('authToken');
     
-    // If the token exists in the localStorage
     if (storedToken) {
-      // We must send the JWT token in the request's "Authorization" Headers
       axios.get(
          `${API_URL}/auth/verify`, 
          { headers: { Authorization: `Bearer ${storedToken}`} }
        )
-      .then((response) => {
-        // If the server verifies that the JWT token is valid  
-        const user = response.data;
-       // Update state variables        
+      .then((response) => { 
+        const user = response.data;      
         setIsLoggedIn(true);
         setIsLoading(false);
         setUser(user);        
       })
-      .catch((error) => {
-        // If the server sends an error response (invalid token) 
-        // Update state variables         
+      .catch((error) => {      
         setIsLoggedIn(false);
         setIsLoading(false);
         setUser(null);        
       })
     } else {
-      // If the token is not available (or is removed)
         setIsLoggedIn(false);
         setIsLoading(false);
         setUser(null);      
     }   
-  }
+  }, [API_URL])
  
-  
-  const logOutUser = () => {                    
-    // To log out the user, remove the token
-    removeToken();
-    // and update the state variables    
+  const logOutUser = () => {                   
+    removeToken();  
     authenticateUser();
   }  
   
   const removeToken = () => {                 
-    // Upon logout, remove the token from the localStorage
     localStorage.removeItem("authToken");
   }
   
   useEffect(() => {                                         
     authenticateUser();   
-  }, []);
+  }, [authenticateUser]);
 
 
   return (                                                   

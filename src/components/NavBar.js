@@ -17,7 +17,7 @@ function NavBar() {
   }
   
   return (
-    <div>
+    <div className="navbar-container">
       <nav>
         <div className={`${showLink ? "showNav" : "hide-nav"}`}>
           <ul>

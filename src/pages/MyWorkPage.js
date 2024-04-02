@@ -70,8 +70,7 @@ function MyWorkPage() {
 
   const converObjectToArray = [userId];
   const checkIfTrue = converObjectToArray.every((userId) => ownerId.includes(userId));
-  const storedMyWorkLength = localStorage.setItem("myWorkLength", myWorkLength);
-    
+  
   return (
     <div>
       <div className="btn-reservation-list">
@@ -102,7 +101,6 @@ function MyWorkPage() {
             <p>Total Person: {element.totalPerson}</p>
             <p>Price Per Person: {element.pricePerPerson} €</p>
             <p>Total Price: {element.totalPrice} €</p>
-            {/* <p>Address : {element.user.address}</p> */}
             {element.user && element.user.address && (
             <p>Address: {element.user.address}</p>
             )}
@@ -110,9 +108,12 @@ function MyWorkPage() {
             <p>Date: {new Date(element.date).toLocaleDateString("en", { day: "2-digit", month: "long", year: "numeric" })}</p>
             <p>Hour: {element.hour}</p>
             <div className="btn-reservationList">
-            <Link to={`/reservations/edit/${element._id}`}>
-              <img className="edit-myReservation" src={editImg} alt="editImg"/>
-            </Link>
+            
+            {element.user._id ? <Link to={`/reservations/edit/${element._id}`}>
+                <img className="edit-myReservation" src={editImg} alt="editImg"/>
+              </Link> : <></>
+            }
+            
             <img onClick={() => deleteReservation(element._id)} src={deleteImg} alt="editImg" className="delete-myReservation"  />
             </div>
           </div>

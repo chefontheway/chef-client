@@ -2,11 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const API_URL = process.env.REACT_APP_SERVER_URL
 
 function EditReviewPage(props) {
-  
-const[description, setDescription] = useState("");
+  const API_URL = process.env.REACT_APP_SERVER_URL
+  const[description, setDescription] = useState("");
   const { reviewId } = useParams();
   const storedToken = localStorage.getItem('authToken');
   
@@ -22,7 +21,7 @@ const[description, setDescription] = useState("");
       .catch(err => {
         console.log("fialed to fetch the review", err)
       });
-  }, [reviewId]);
+  }, [reviewId, storedToken]);
 
   const handleFormSubmitReview = e => {
     e.preventDefault();

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MyServiceList from "../components/MyServiceList";
 
@@ -8,7 +8,7 @@ function MyServicePage(props) {
   const [myServices, setMyServices] = useState(undefined);
   const storeToken = localStorage.getItem("authToken");
 
-  const getAllMyServices = () => {
+  const getAllMyServices = useCallback(() => {
     axios
       .get(`${API_URL}/api/myService`, {
         headers: { Authorization: `Bearer ${storeToken}` },
@@ -17,7 +17,7 @@ function MyServicePage(props) {
         setMyServices(result.data);
       })
       .catch((e) => console.log(e));
-  };
+  }, [API_URL, storeToken]);
 
 
   const deleteService = (serviceId) => {
@@ -37,7 +37,7 @@ function MyServicePage(props) {
 
   useEffect(() => {
     getAllMyServices();
-  }, []);
+  }, [getAllMyServices]);
 
   if (myServices === undefined) {
     return <h1 className="loading">Loading .....</h1>;

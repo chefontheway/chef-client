@@ -2,11 +2,10 @@ import { Link } from 'react-router-dom';
 import descriptionImg from '../images/Homepage.png'
 import pasta from '../images/Pasta-copy.jpg'
 import logo from '../images/logo.svg'
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 
 function HomePage() {
 
-  // Function to check if an element is in the viewport
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect();
   return (
@@ -18,7 +17,7 @@ function isElementInViewport(el) {
 }
 
 // Function to add animations when elements are in the viewport
-function handleScrollAnimations() {
+const handleScrollAnimations = useCallback(() => {
   const elementsToAnimate = document.querySelectorAll('.logo-home');
   const imgDescriptionElement = document.querySelectorAll('.img-description');
   const whoAreWeElement = document.querySelectorAll('.who-are-we-text');
@@ -70,14 +69,13 @@ function handleScrollAnimations() {
     }
   });
 
-};
+}, []);
 
 useEffect(() => {
   document.addEventListener('scroll', handleScrollAnimations);
   
   handleScrollAnimations();
-}, [])
-
+}, [handleScrollAnimations])
 
     return (
       <div className="home-page">
@@ -98,6 +96,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
+      
     </div>
     );
   }

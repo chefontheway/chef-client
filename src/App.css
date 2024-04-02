@@ -32,6 +32,20 @@
 }
 /* Navbar */
 
+.navbar-container {
+  margin-bottom: 3.2em;
+}
+
+nav {
+  margin: 0px;
+  background-color: #074220;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  height: 3.2em;
+  margin-bottom: 4em;
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -47,12 +61,6 @@
 }
 
 
-nav {
-  margin: 0px;
-  background-color: #074220;
-  display: flex;
-  height: 3.2em;
-}
 
 nav ul{
   list-style: none;
@@ -72,7 +80,7 @@ nav li:hover{
 
 nav .navbarAuth{
   color: white;
-  position: absolute;
+  position: fixed;
   float: right;
   right: 0;
   padding-right: 2em;
@@ -634,20 +642,21 @@ text-align: center;
 .footer{
   background-color: #074220;
   color: white;
-  margin: 0em;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
-
 
 .footer ul{
   display: flex;
 }
+
 .footer li{
   list-style: none;
   margin: 0.8em 1em;
-
 }
 
 .footer hr{
@@ -718,12 +727,7 @@ text-align: center;
   width: 100px;
 }
 
-
-
-
 /*List of Service */
-
-
 
 .container-filter-by-place {
   display: flex;
@@ -742,6 +746,7 @@ text-align: center;
   padding-bottom: 0.5em;
   margin: 0;
 }
+
 .filter-input {
   display: flex;
   flex-direction: row;
@@ -760,13 +765,10 @@ text-align: center;
 }
 
 
-
-
 .list-of-services {
   display: flex;
   flex-wrap: wrap;
   background-color: #EBEBEB;
-
 }
 
 .container-service-card-list {
@@ -1029,13 +1031,6 @@ text-align: center;
     padding: 2em;
   }
   /* Navbar */
-  
-  .navbar {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-  }
 
   .logo {
     width: 3em;
@@ -1045,9 +1040,10 @@ text-align: center;
   
   nav {
     margin: 0px;
-    background-color: #074220;
+    /* background-color: #074220; */
     display: flex;
     height: 3.2em;
+    position: fixed;
   }
   
   nav ul{
@@ -1624,17 +1620,11 @@ text-align: center;
     color: black;
   }
   
-  
-  
-  
-  
-  
-  
   /* Footer */
   .footer{
     background-color: #074220;
     color: white;
-    margin: 0em;
+    margin: 0;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -2139,9 +2129,6 @@ text-align: center;
   .filter-input:active {
     border: 1px solid #f8bddf;
   }
-  
-  
-  
   
   .list-of-services {
     display: flex;

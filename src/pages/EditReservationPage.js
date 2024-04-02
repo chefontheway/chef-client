@@ -5,9 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function EditReservationPage(props) {
   const API_URL = process.env.REACT_APP_SERVER_URL
-  
   const { reservationId } = useParams();
-  
   const navigate = useNavigate();
 
   const[fullName, setFullName] = useState("");
@@ -28,14 +26,13 @@ function EditReservationPage(props) {
       setPricePerPerson(oneReservation.pricePerPerson);
       setTotalPrice(oneReservation.totalPrice);
       setHour(oneReservation.hour);
-
+      
       // Format the date received from the server
       const formattedDate = format(new Date(oneReservation.date), "yyyy-MM-dd");
       setDate(formattedDate);
     })
     .catch(err => console.log("failed updating the reservation"));
-  }, [reservationId]);
-
+  }, [reservationId, API_URL, storeToken]);
 
   const handleEditReservation = (e) => {
     e.preventDefault();
