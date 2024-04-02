@@ -637,8 +637,6 @@ text-align: center;
   margin-top: auto;
   background-color: #074220;
   color: white;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .footer ul{
@@ -662,13 +660,6 @@ text-align: center;
 .footer .lawerText{
   padding-bottom: 0.8em;
 }
-
-
-
-
-
-
-
 
 
 /* Contact Us */
@@ -2542,8 +2533,7 @@ text-align: center;
     display: flex;
     flex-wrap: wrap;
   }
-  
-  
+
   .footer ul{
     display: flex;
     flex-flow:column;

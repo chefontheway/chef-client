@@ -1,6 +1,7 @@
 function Footer(){
 return(
     <div className="footer">
+        <hr />  
         <div className="lawerText">
             <p>© 2023 Chef On The Way Enterprise, Inc | Solid & Pierre | Contact: chefontheway@gmail.com</p>
         </div>
