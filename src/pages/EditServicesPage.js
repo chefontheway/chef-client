@@ -7,15 +7,15 @@ const EditServicesPage = () => {
     const navigate = useNavigate();
     const API_URL = process.env.REACT_APP_SERVER_URL;
     const storedToken = localStorage.getItem('authToken');
+    const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
 
-    // Initial state for service details
     const [serviceDetails, setServiceDetails] = useState({
         speciality: '',
         place: '',
         description: '',
         pricePerPerson: '',
         availability: '',
-        picture: null // Initially, no file is selected
+        picture: null
     });
 
     useEffect(() => {
@@ -43,9 +43,18 @@ const EditServicesPage = () => {
     };
 
     const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImagePreviewUrl(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+
         setServiceDetails({
             ...serviceDetails,
-            picture: event.target.files[0],
+            picture: file,
         });
     };
 
@@ -85,17 +94,17 @@ const EditServicesPage = () => {
                 <label>Picture</label>
                 <input 
                   type="file" 
-                  name="picture" 
+                  name="picture"
                   onChange={handleFileChange} 
                 />
-                <img src={serviceDetails?.picture} alt='img' className='image-edit-service'/>
+                <img src={imagePreviewUrl || serviceDetails?.picture} alt='' className='image-edit-service'/>
                 
                 <label>Place</label>
                 <input
                   type="text"
                   name="place"
                   value={serviceDetails.place}
-                  onChange={handleFileChange}
+                  onChange={handleInputChange}
                 />
 
                 <label>Description</label>
@@ -103,7 +112,7 @@ const EditServicesPage = () => {
                   type="text"
                   name="description"
                   value={serviceDetails.description}
-                  onChange={handleFileChange}
+                  onChange={handleInputChange}
                 />
 
                 <label>Price Per Person</label>
@@ -111,14 +120,14 @@ const EditServicesPage = () => {
                   type="number"
                   name="pricePerPerson"
                   value={serviceDetails.pricePerPerson}
-                  onChange={handleFileChange}
+                  onChange={handleInputChange}
                 />
             
                 <label>Availability</label>
                 <select
                   name="availability"
                   value={serviceDetails.availability}
-                  onChange={handleFileChange}
+                  onChange={handleInputChange}
                 >
                   <option value="">-- Select Availability --</option>
                   <option value="Available">Available</option>
