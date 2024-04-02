@@ -87,7 +87,7 @@ function ReservationListPage() {
         
           <div key={element._id} className="reservation-list-page">
             <h3>Order by: {element.user.name}</h3>
-            <h4>{element.service.speciality}</h4>
+            <h4>{element.service?.speciality}</h4>
             <p>Category: {element.category}</p>
             <p>Total Person: {element.totalPerson}</p>
             <p>Price Per Person: {element.pricePerPerson} €</p>

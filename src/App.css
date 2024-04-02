@@ -544,6 +544,7 @@ text-align: center;
 }
 
 .reservation-page {
+  margin-top: 3.2rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -846,7 +847,7 @@ text-align: center;
   margin-left: 15px;
 }
 
-/* For profil Service */
+/* For Profile Service */
 
 
 .my-own-service{
@@ -950,7 +951,7 @@ text-align: center;
 }
 
 
-/* profile field */
+/* Profile field */
 .update-profile-form-container {
   margin-top: 3.2rem;
 }
@@ -995,6 +996,9 @@ text-align: center;
 }
 
 
+.SignupPage-Container, .LoginPage-Container {
+  margin-top: 3.2rem;
+}
 
 
 
