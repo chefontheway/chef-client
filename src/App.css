@@ -143,6 +143,7 @@ nav .btn-logout {
   height: 40em;
   background-color: #EBEBEB;
   padding: 5em;
+  margin-bottom: 6em;
 }
 
 .carousselHome{
@@ -628,7 +629,6 @@ text-align: center;
 }
 
 
-
 /* Footer */
 .footer{
   background-color: #074220;
@@ -636,6 +636,7 @@ text-align: center;
   display: flex;
   flex-wrap: wrap;
   position: fixed;
+  margin-top: 4em;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -1115,6 +1116,7 @@ text-align: center;
     width: 100%;
     height: auto;
     padding: 0em;
+    margin-bottom: 6em;
   }
   
   .carousselHome{
@@ -2048,6 +2050,7 @@ text-align: center;
     width: 100%;
     height: auto;
     padding: 0em;
+    margin-bottom: 10.5em;
   }
   
   .carousselHome{
@@ -2338,7 +2341,7 @@ text-align: center;
     align-items: center;
   }
 
-  form.Signup-Form {
+  .Signup-Form {
     display: flex;
     flex-direction: column;
     padding-top: 1em;
@@ -2359,7 +2362,7 @@ text-align: center;
     padding: 0.4em;
   }
   
-  .SignupPage-Form button, .LoginPage-Form button{
+  .Signup-Form button, .LoginPage-Form button{
     border-radius: 2em;
     border: 0.5px solid black;
     padding:  0.75em 1em;
