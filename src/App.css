@@ -1952,6 +1952,10 @@ text-align: center;
     color: #f8bddf;
   }
   
+  .navbarAuth.navbar {
+    padding-top: 5rem;
+    float: left;
+}
   
   nav .btn-logout {
     color: white;
